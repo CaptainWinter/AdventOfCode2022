@@ -19,7 +19,6 @@ int main(){
         return 1;
     }
 
-
     while (fgets(stringaux, sizeof(stringaux), f))
     {
         // checks if the current line is empty (is equal to "\n").
