@@ -5,10 +5,10 @@
 
 int main(){
 
-    int maiorCaloria = 0, aux0 = 0, aux1 = 1;
+    int maiorCaloria = 0, aux = 0;
     FILE *f = fopen("input.txt", "r");
     char stringaux[15];
-    // aux0 and aux1 are auxiliary variables. They are used to read and store the values from input.txt, respectively.
+    // aux is a auxiliary variable. It's used to read and store the values from input.txt.
     // stringaux is an auxiliary variable used on the fgets function.
     // maiorCaloria (translates to "biggestCalorie" from Portuguese -> English) will store the biggest amount of calories found.
 
@@ -22,21 +22,17 @@ int main(){
     while (fgets(stringaux, sizeof(stringaux), f))
     {
         // checks if the current line is empty (is equal to "\n").
-        //
-        // strcmp outputs a value of 0 if both strings are equal,
-        // which means the if statement reads it as FALSE instead of TRUE if they are equal.
         if ((strcmp(stringaux, "\n")))
-        {
-            aux0 = atoi(stringaux);
-            aux1 += aux0;
-        }
+            aux += atoi(stringaux);
+
+        // stores the calorie value if it's the highest so far.    
         else
         {
-            if (maiorCaloria < aux1)
+            if (maiorCaloria < aux)
             {
-                maiorCaloria = aux1;
+                maiorCaloria = aux;
             }
-            aux1 = 0;
+            aux = 0;
         }
     }
 
