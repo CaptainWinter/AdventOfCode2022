@@ -84,6 +84,13 @@ int main ()
     int totalValue = 0;
     FILE *f = fopen("input.txt", "r");
 
+    // checks for file.
+	if (f == NULL)
+    {
+        printf("File not found.");
+        return 1;
+    }
+    
     while (!(fscanf(f, "%c %c\n", &ch1, &ch2)==EOF))
     {
         totalValue += valueOf(ch2) + roundState(ch1, ch2);
