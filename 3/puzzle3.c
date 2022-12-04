@@ -56,7 +56,7 @@ int main ()
         memcpy(stringaux1,string+len1, len2);
         //printf("%s %s\n", stringaux0, stringaux1);
 
-        for (int i = 0; i < len1; i++)
+        for (int i = 0; i < len1; i++)cd
         {
             for (int j = 0; j < len2; j++)
             {
